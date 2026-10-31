@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#f6f5f1"><title>Terms of Service | CalciVerse</title><meta name="description" content="Terms for using CalciVerse calculators and browser-based utilities."><link rel="canonical" href="https://calciverse.com/terms.html"><link rel="icon" type="image/png" href="assets/CalciVerse-Icon.png"><meta property="og:site_name" content="CalciVerse"><meta property="og:type" content="website"><meta property="og:title" content="Terms of Service | CalciVerse"><meta property="og:description" content="Terms for using CalciVerse calculators and browser-based utilities."><meta property="og:url" content="https://calciverse.com/terms.html"><meta property="og:image" content="https://calciverse.com/assets/CalciVerse-Logo.png"><script>(() => { let saved; try { saved = localStorage.getItem('calciverse-theme'); } catch {} if (saved === 'dark' || saved === 'light') document.documentElement.dataset.theme = saved; const dark = saved === 'dark' || (!saved && matchMedia('(prefers-color-scheme: dark)').matches); document.querySelector('meta[name="theme-color"]').content = dark ? '#171d19' : '#f6f5f1'; })();</script><link rel="stylesheet" href="styles.css"></head><body><header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="/" aria-label="CalciVerse home"><img class="brand-mark" src="assets/CalciVerse-Icon.png" alt="" width="34" height="34" aria-hidden="true"><span>CalciVerse</span></a>
+    <span class="header-note">The Universal Calculation Engine</span>
+    <nav class="header-nav" aria-label="Tool categories"><a href="/tools/wealth/">Money</a><a href="/tools/age/">Dates</a><a href="/tools/timezone/">Time</a><a href="/tools/water/">Wellness</a></nav>
+    <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to dark mode" hidden><span class="theme-symbol" aria-hidden="true">◐</span><span id="theme-toggle-label">Dark mode</span></button>
+  </div>
+</header><main class="legal-main"><p class="section-index">CalciVerse / Information</p><h1>Terms of Service</h1><p class="legal-intro">Terms for using CalciVerse calculators and browser-based utilities.</p><p class="legal-meta">Last updated 29 October 2026</p><div class="legal-content"><section><h2>Use of CalciVerse</h2><p>CalciVerse Digital Platforms provides free browser-based calculators and utilities for general information. You may use the site for lawful personal or business purposes. Do not attempt to disrupt the service, misuse its infrastructure or interfere with other users.</p></section>
+<section><h2>Estimates and professional advice</h2><p>Calculations depend on the values you enter, the formulas displayed and assumptions such as compounding, dates or time zones. Results may be incomplete or inaccurate for your circumstances. The site does not provide financial, investment, tax, medical or legal advice. Verify important decisions with a qualified professional.</p></section>
+<section><h2>Availability and third-party services</h2><p>We may change, suspend or remove tools as we improve the service. Some pages may contain analytics, advertising or links provided by third parties. Their own terms and privacy practices may apply.</p></section>
+<section><h2>Site content</h2><p>CalciVerse branding, page design and original site content belong to CalciVerse Digital Platforms or their respective owners. You may share links to the tools. Other copying or redistribution is subject to applicable law and permission from the rights holder.</p></section>
+<section><h2>Responsibility</h2><p>We provide the site on an as-available basis. To the extent permitted by applicable law, CalciVerse Digital Platforms is not responsible for losses arising solely from reliance on estimates or temporary unavailability. Nothing here limits rights or remedies that cannot legally be excluded.</p></section>
+<section><h2>Changes, law and contact</h2><p>We may update these terms by posting a revised version here. These terms are governed by applicable laws of India. For questions, email <a href="mailto:support@calciverse.com">support@calciverse.com</a>.</p></section></div></main><footer class="site-footer"><div class="container footer-inner"><a class="brand footer-brand" href="/" aria-label="CalciVerse home"><img class="brand-mark" src="assets/CalciVerse-Icon.png" alt="" width="34" height="34" aria-hidden="true"><span>CalciVerse</span></a><div class="footer-copy"><span>Made for the calculations that matter every day.</span><small>Results are estimates. Verify important decisions independently.</small></div><nav class="footer-links" aria-label="Policies and support"><a href="/privacy.html">Privacy Policy</a><a href="/terms.html">Terms of Service</a><a href="/contact.html">Contact &amp; Support</a></nav></div></footer><script>const themeButton = document.querySelector('#theme-toggle');
+const themeLabel = document.querySelector('#theme-toggle-label');
+const systemTheme = matchMedia('(prefers-color-scheme: dark)');
+const currentTheme = () => document.documentElement.dataset.theme || (systemTheme.matches ? 'dark' : 'light');
+function syncTheme() {
+  const next = currentTheme() === 'dark' ? 'Light' : 'Dark';
+  themeLabel.textContent = `${next} mode`;
+  themeButton.setAttribute('aria-label', `Switch to ${next.toLowerCase()} mode`);
+  document.querySelector('meta[name="theme-color"]').content = currentTheme() === 'dark' ? '#171d19' : '#f6f5f1';
+}
+themeButton.hidden = false;
+themeButton.addEventListener('click', () => {
+  const next = currentTheme() === 'dark' ? 'light' : 'dark';
+  document.documentElement.dataset.theme = next;
+  try { localStorage.setItem('calciverse-theme', next); } catch {}
+  syncTheme();
+});
+systemTheme.addEventListener('change', () => { if (!document.documentElement.dataset.theme) syncTheme(); });
+syncTheme();
+</script></body></html>

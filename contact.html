@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#f6f5f1"><title>Contact &amp; Support | CalciVerse</title><meta name="description" content="Contact CalciVerse Digital Platforms for calculator support, feedback and privacy requests."><link rel="canonical" href="https://calciverse.com/contact.html"><link rel="icon" type="image/png" href="assets/CalciVerse-Icon.png"><meta property="og:site_name" content="CalciVerse"><meta property="og:type" content="website"><meta property="og:title" content="Contact &amp; Support | CalciVerse"><meta property="og:description" content="Contact CalciVerse Digital Platforms for calculator support, feedback and privacy requests."><meta property="og:url" content="https://calciverse.com/contact.html"><meta property="og:image" content="https://calciverse.com/assets/CalciVerse-Logo.png"><script>(() => { let saved; try { saved = localStorage.getItem('calciverse-theme'); } catch {} if (saved === 'dark' || saved === 'light') document.documentElement.dataset.theme = saved; const dark = saved === 'dark' || (!saved && matchMedia('(prefers-color-scheme: dark)').matches); document.querySelector('meta[name="theme-color"]').content = dark ? '#171d19' : '#f6f5f1'; })();</script><link rel="stylesheet" href="styles.css"></head><body><header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="/" aria-label="CalciVerse home"><img class="brand-mark" src="assets/CalciVerse-Icon.png" alt="" width="34" height="34" aria-hidden="true"><span>CalciVerse</span></a>
+    <span class="header-note">The Universal Calculation Engine</span>
+    <nav class="header-nav" aria-label="Tool categories"><a href="/tools/wealth/">Money</a><a href="/tools/age/">Dates</a><a href="/tools/timezone/">Time</a><a href="/tools/water/">Wellness</a></nav>
+    <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to dark mode" hidden><span class="theme-symbol" aria-hidden="true">◐</span><span id="theme-toggle-label">Dark mode</span></button>
+  </div>
+</header><main class="legal-main"><p class="section-index">CalciVerse / Information</p><h1>Contact &amp; Support</h1><p class="legal-intro">Contact CalciVerse Digital Platforms for calculator support, feedback and privacy requests.</p><p class="legal-meta">Last updated 29 October 2026</p><div class="legal-content"><section><h2>Email us</h2><p>For help with a calculator, accessibility issue, incorrect result, site feedback or a general question, write to <a href="mailto:support@calciverse.com">support@calciverse.com</a>.</p><p>When reporting a calculation issue, include the tool name, the values you entered and the result you expected. Please avoid sending sensitive personal or financial information.</p></section>
+<section><h2>Privacy requests</h2><p>Use the same address for questions about data, cookies, analytics, advertising, or a privacy request. Include “Privacy request” in the subject line so we can route it appropriately.</p></section>
+<section><h2>Publisher</h2><p>CalciVerse Digital Platforms<br>India</p><p>Review our <a href="/privacy.html">Privacy Policy</a> and <a href="/terms.html">Terms of Service</a> for more detail.</p></section></div></main><footer class="site-footer"><div class="container footer-inner"><a class="brand footer-brand" href="/" aria-label="CalciVerse home"><img class="brand-mark" src="assets/CalciVerse-Icon.png" alt="" width="34" height="34" aria-hidden="true"><span>CalciVerse</span></a><div class="footer-copy"><span>Made for the calculations that matter every day.</span><small>Results are estimates. Verify important decisions independently.</small></div><nav class="footer-links" aria-label="Policies and support"><a href="/privacy.html">Privacy Policy</a><a href="/terms.html">Terms of Service</a><a href="/contact.html">Contact &amp; Support</a></nav></div></footer><script>const themeButton = document.querySelector('#theme-toggle');
+const themeLabel = document.querySelector('#theme-toggle-label');
+const systemTheme = matchMedia('(prefers-color-scheme: dark)');
+const currentTheme = () => document.documentElement.dataset.theme || (systemTheme.matches ? 'dark' : 'light');
+function syncTheme() {
+  const next = currentTheme() === 'dark' ? 'Light' : 'Dark';
+  themeLabel.textContent = `${next} mode`;
+  themeButton.setAttribute('aria-label', `Switch to ${next.toLowerCase()} mode`);
+  document.querySelector('meta[name="theme-color"]').content = currentTheme() === 'dark' ? '#171d19' : '#f6f5f1';
+}
+themeButton.hidden = false;
+themeButton.addEventListener('click', () => {
+  const next = currentTheme() === 'dark' ? 'light' : 'dark';
+  document.documentElement.dataset.theme = next;
+  try { localStorage.setItem('calciverse-theme', next); } catch {}
+  syncTheme();
+});
+systemTheme.addEventListener('change', () => { if (!document.documentElement.dataset.theme) syncTheme(); });
+syncTheme();
+</script></body></html>
