@@ -1,0 +1,19 @@
+# OS Metadata
+.DS_Store
+.AppleDouble
+.LSOverride
+__MACOSX/
+
+# Thumbnails and hidden files
+._*
+.Spotlight-V100
+.Trashes
+
+# Code editor configurations
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
