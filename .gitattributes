@@ -1,0 +1,14 @@
+# Handle line endings automatically for files detected as text
+* text=auto
+
+# Standardize line endings to LF for code assets
+*.html text eol=lf
+*.css text eol=lf
+*.js text eol=lf
+*.json text eol=lf
+*.md text eol=lf
+
+# Denote binary files (images should not be normalized)
+*.png binary
+*.jpg binary
+*.ico binary
